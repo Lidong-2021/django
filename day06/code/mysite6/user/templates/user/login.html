@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <style>
+        div>label{
+             display: inline-block;
+             width: 80px;
+        }
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<form action="/user/login" method="post">
+    {% csrf_token %}
+    <div>
+        <label>用户名</label>
+        <input type="text" name="username" value="{{ username }}">
+        <span>{{ username_err }}</span>
+    </div>
+    <div>
+        <label>密码</label>
+        <input type="text" name="password" value="{{ password }}">
+        <span>{{ password_err }}</span>
+    </div>
+    <div>
+        <label for="id_rem">记住用户名</label>
+        <input type="checkbox" name="remember"
+               value="1"
+               id="id_rem">
+    </div>
+    <div>
+        <input type="submit" value="登录">
+    </div>
+
+</form>
+</body>
+</html>

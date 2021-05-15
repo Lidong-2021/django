@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/login2" method="post">
+        <div>
+            <label for="username">姓名:</label>
+            <input type="text" name="username" id="username" value="{{ name }}">
+        </div>
+        <div>
+            <label for="passwd">密码:</label>
+            <input type="text" name="passwd" id="passwd" value="{{ passwd }}">
+        </div>
+        <div>
+            <input type="submit" value="登录">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公积金计算器</title>
+    <style>
+        ul {
+            width: 400px;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            border: solid 5px #4c4c4c;
+        }
+
+        ul>li {
+            border-bottom: dashed 1px #cee2df;
+            overflow: hidden;
+
+        }
+
+        ul>li>span {
+            /* display: inline-block; */
+            padding: 5px 4px;
+            float: left;
+            border-right: solid 1px #cee2df;
+            width: 31%;
+        }
+
+        .s {
+            background-color: #aaa;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/ggj" method="post">
+        <div>
+            <label for="">请输入基数</label>
+            <input type="text" name="base" value="{{base}}">
+        </div>
+        <div>
+            <label for="">请选择户口</label>
+            <select name="huKou" id="">
+                <option value="1">城市</option>
+                <option value="2">农村</option>
+            </select>
+        </div>
+        <input type="submit" value="开始计算">
+    </form>
+    <ul>
+        <li><span>项目</span><span>个人缴纳</span><span>单位缴纳</span></li>
+        <li><span>养老保险</span><span>{{yl_gr}}</span><span>{{yg_dw}}</span></li>
+        <li><span>失业保险</span><span>{{sy_gr}}</span><span>{{sy_dw}}</span></li>
+        <li><span>工商保险</span><span>{{gs_gr}}</span><span>{{gs_dw}}</span></li>
+        <li><span>生育保险</span><span>{{shyu_gr}}</span><span>{{shyu_dw}}</span></li>
+        <li><span>医疗保险</span><span>{{yiliao_gr}}</span><span>{{yiliao_dw}}</span></li>
+        <li><span>公积金</span><span>{{ggj_gr}}</span><span>{{ggj_dw}}</span></li>
+        <li><span>个人缴费总和</span><span>{{gr}}</span><span>-</span></li>
+        <li><span>公司缴费总和</span><span>-</span><span>{{dw}}</span></li>
+    </ul>
+</body>
+
+</html>

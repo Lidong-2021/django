@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加新书</title>
+    <style>
+        #table{
+            margin: 0 auto;
+            width: 350px;
+            text-align: center;
+        }
+        #table>form>div>span{
+            display: inline-block;
+            padding-right: 10px;
+            width: 65px;
+            text-align: right;
+        }
+        form{
+            padding: 20px 10px 10px 10px;
+            border: solid 1px #ccc;
+            background-color: #eee;
+            box-shadow: 5px 5px 10px #aaa;
+        }
+        #table>form>div{
+            padding: 0px,5px;
+        }
+        #table>form>input{
+            margin-top: 12px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="table">
+        <h3>添加图书</h3>
+        <form action="/bookstore/add" method="POST">
+            <div><span>书名：</span><input type="text" name="title"></div>
+            <div><span>出版社：</span><input type="text" name="pub" ></div>
+            <div><span>定价：</span><input type="text" name="price" ></div>
+            <div><span>零售价：</span><input type="text" name="m_price" ></div>
+            <input type="submit" value="添加新书">
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #list th,
+        td {
+            display: inline-block;
+            width: 140px;
+            height: 20px;
+            border-bottom: dashed 1px #ccc;
+        }
+
+        #list {
+
+            width: 1002px;
+            margin: 0 auto;
+
+        }
+
+        #list>table {
+            overflow: hidden;
+            border: solid 2px #ccc;
+            text-align: center;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="list">
+        <table>
+
+            <a id="a" href="/bookstore/add">添加新书</a>
+            <caption>
+                <h3>图书列表</h3>
+            </caption>
+
+            <tr>
+                <th>ID</th>
+                <th>书名</th>
+                <th>出版社</th>
+                <th>定价</th>
+                <th>零售价</th>
+                <th>删除图书</th>
+                <th>修改图书</th>
+            </tr>
+
+            {% for abook in books %}
+            <tr>
+                <th>{{ abook.id }}</th>
+                <th>{{abook.title}}</th>
+                <th>{{abook.pub}}</th>
+                <th>{{abook.price}}</th>
+                <th>{{abook.marker_price}}</th>
+                <td><a href="/bookstore/del/{{ abook.id }}">删除</a></td>
+                <td><a href="/bookstore/mod/{{ abook.id }}">修改</a></td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+</body>
+
+</html>

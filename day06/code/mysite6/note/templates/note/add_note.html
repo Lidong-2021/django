@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新笔记</title>
+    <style>
+        textarea{
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<form action="/note/add" method="post">
+    {% csrf_token %}
+    <div>
+        <label>标题</label>
+        <input type="text" name="title">
+        <input type="submit" value="保存">
+        <a href="/note/">返回笔记列表</a>
+    </div>
+    <div>
+        <textarea name="content" cols="30" rows="10">
+
+        </textarea>
+    </div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/blog.js"></script>
+</head>
+
+<body>
+    <div id="login">
+        <img src="/static/imgs/bg.jpeg" alt="">
+    </div>
+    <!-- 使用form表单包裹div -->
+    <form action="/user/reg" method="post" onsubmit="return checkvalue();">
+        <div id="log">
+            <div class="title">
+                <h3>Login!</h3>
+            </div>
+            <div class="tip">
+                login
+            </div>
+            <div class="item">
+                <input type="text"
+                       name="username"
+                       id="username"
+                       placeholder="UserName"
+                       value="{{ user_name }}"
+                >
+            </div>
+            <div class="error" id="err1">
+                用户名不能为空
+            </div>
+            <div class="item">
+                <input type="password"
+                       name="password"
+                       id="password"
+                       placeholder="Password"
+                >
+            </div>
+            <div class="error" id="err2">
+                密码不能为空
+            </div>
+            <div class="item">
+                <input type="password"
+                       name="password2"
+                       id="password2"
+                       placeholder="Enter the password again"
+                >
+            </div>
+            <div class="error" id="err3">
+                两次输入不一致
+            </div>
+            <div class="btn">
+                <input type="submit" value="Login">
+            </div>
+        </div>
+    </form>
+    
+</body>
+
+</html>

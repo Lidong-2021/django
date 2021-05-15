@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>社保查询</title>
+</head>
+<body>
+     <form action="/shebao" method="POST">
+        <div>
+            <label for="">请输入基数</label>
+            <input type="text" name="base">
+        </div>
+        <div>
+            <label for="">请选择户口</label>
+            <select name="huKou" id="">
+                <option value="1">城市</option>
+                <option value="2">农村</option>
+            </select>
+        </div>
+        <input type="submit" value="开始计算">
+    </form>
+    <ul>
+        <li><span>项目</span><span>个人缴纳</span><span>单位缴纳</span></li>
+        <li><span>养老保险</span><span>{{yl_gr}}</span><span>{{yg_dw}}</span></li>
+        <li><span>失业保险</span><span>{{sy_gr}}</span><span>{{sy_dw}}</span></li>
+        <li><span>工商保险</span><span>{{gs_gr}}</span><span>{{gs_dw}}</span></li>
+        <li><span>生育保险</span><span>{{shyu_gr}}</span><span>{{shyu_dw}}</span></li>
+        <li><span>医疗保险</span><span>{{yiliao_gr}}</span><span>{{yiliao_dw}}</span></li>
+        <li><span>公积金</span><span>{{ggj_gr}}</span><span>{{ggj_dw}}</span></li>
+        <li><span>个人缴费总和</span><span>{{gr}}</span><span>-</span></li>
+        <li><span>公司缴费总和</span><span>-</span><span>{{dw}}</span></li>
+    </ul>
+</body>
+</html>
